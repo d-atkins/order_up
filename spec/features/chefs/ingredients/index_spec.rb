@@ -15,7 +15,7 @@ RSpec.describe "As a visitor", type: :feature do
       dish1.ingredients << [ingredient1, ingredient2, ingredient3]
       dish2.ingredients << [ingredient1, ingredient4, ingredient5]
 
-      visit("/chefs/#{chef1.id}")
+      visit(chef_ingredients_path(chef1.id))
 
       click_link("Ingredients used by this chef")
       expect(current_path).to eq("/chefs/#{chef1.id}/ingredients")
