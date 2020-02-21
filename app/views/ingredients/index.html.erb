@@ -1,6 +1,8 @@
 <h2>Ingredients used by <%= @chef.name %></h2>
-<%= @chef.ingredients_used.join(', ') %>
-<h2>Most Popular Ingredients</h2>
+<section id="unique_ingredients">
+  <%= @chef.ingredients_used.join(', ') %>
+  <h2>Most Popular Ingredients</h2>
+</section>
 <section id="popular">
   <%= @chef.most_popular_ingredients.join(', ') %>
 </section>
