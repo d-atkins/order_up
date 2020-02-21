@@ -21,7 +21,7 @@ RSpec.describe Chef, type: :model do
       dish1.ingredients << [ingredient1, ingredient2, ingredient3]
       dish2.ingredients << [ingredient1, ingredient4, ingredient5]
 
-      expect(chef1.ingredients_used).to eq(["Yam", "Rubies", "Fat Water", "Bun", "Mystery Meat"])
+      expect(chef1.ingredients_used).to eq(["Bun", "Fat Water", "Mystery meat", "Rubies", "Yam"])
     end
   end
 end
