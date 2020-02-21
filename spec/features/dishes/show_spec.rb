@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "As a visitor", type: :feature do
   describe "from the dish show page" do
-    it "I see the name of the chef and a list of ingredients for that dish" do
+    it "I see the chef, list of ingredients, and calorie count for that dish" do
       chef1 = Chef.create(name: "Chef Mike")
       dish1 = Dish.create(name: "Rails Soup", description: "Gooood", chef: chef1)
       ingredient1 = Ingredient.create(name: "Yam", calories: 40)
@@ -16,6 +16,7 @@ RSpec.describe "As a visitor", type: :feature do
       expect(page).to have_content(ingredient1.name)
       expect(page).to have_content(ingredient2.name)
       expect(page).to have_content(ingredient3.name)
+      expect(page).to have_content("Total calories: 4042")
     end
   end
 end
