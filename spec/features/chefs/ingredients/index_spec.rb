@@ -19,7 +19,10 @@ RSpec.describe "As a visitor", type: :feature do
 
       click_link("Ingredients used by this chef")
       expect(current_path).to eq(chef_ingredients_path(chef1.id))
-      expect(page).to have_content("Bun, Fat Water, Mystery meat, Rubies, Yam")
+      within("#unique_ingredients") do
+        expect(page).to have_content("Bun, Fat Water, Mystery meat, Rubies, Yam")
+        expect(page).to have_content(ingredient1.name, count: 1)
+      end
     end
 
     it "I see the three most popular ingredients that the chef uses in their dishes" do
