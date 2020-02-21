@@ -10,7 +10,7 @@ RSpec.describe "As a visitor", type: :feature do
       ingredient3 = Ingredient.create(name: "Fat Water", calories: 4000)
       dish1.ingredients << [ingredient1, ingredient2, ingredient3]
 
-      visit("/dishes/#{dish1.id}")
+      visit(dish_path(dish1.id))
 
       expect(page).to have_content(chef1.name)
       expect(page).to have_content(ingredient1.name)
