@@ -8,4 +8,13 @@ class Chef <ApplicationRecord
       .distinct
       .pluck("ingredients.name")
   end
+
+  def most_popular_ingredients
+     Ingredient
+      .joins(:dishes)
+      .group(:id)
+      .order("count(dishes.id) desc")
+      .limit(3)
+      .pluck(:name)
+  end
 end
