@@ -1,0 +1,11 @@
+<h1><%= @dish.name %></h1>
+<section id="chef">
+  <h2>Chef: </h2>
+  <p><%= @dish.chef.name %></p>
+</section>
+<section id="ingredients">
+  <h2>Ingredients: </h2>
+  <% @dish.ingredients.each do |ingredient| %>
+    <p><%= ingredient.name %> - <%= ingredient.calories %> calories</p>
+  <% end %>
+</section>
